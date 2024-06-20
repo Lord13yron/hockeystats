@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+
+
+<form action="/submit" method="POST">
+    <select name="teamId" class="form-select" aria-label="Default select example">
+        <option selected>Select Team</option>
+        <%  teams.forEach(function(team){%>
+            <% if (team.lastSeasonId === null){ %>
+                <option value="<%= team.id %>"><%= team.fullName %> </option>
+            <% } %>
+        <% }); %>
+    </select>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+<img src="https://assets.nhle.com/logos/nhl/svg/MTL_19171918-19181919_light.svg" alt="logo">
